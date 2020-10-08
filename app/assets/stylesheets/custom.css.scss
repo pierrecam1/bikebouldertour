@@ -1,2 +1,139 @@
+// Custom.scss
+$dark: #08090A !default;
 
+.btn{border-radius: 50px !important;}
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1485px,
+  xl: 1600px
+) !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 1200px,
+  lg: 1435px,
+  xl: 1540px
+) !default;
+
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3),
+    6: ($spacer * 4),
+    7: ($spacer * 5)
+  ),
+  $spacers
+);
 @import "bootstrap/scss/bootstrap";
+@font-face {
+    font-family: 'Hellix';
+    src: url('Hellix-SemiBoldItalic.eot');
+    src: local('Hellix SemiBold Italic'), local('Hellix-SemiBoldItalic'),
+        url('Hellix-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Hellix-SemiBoldItalic.woff2') format('woff2'),
+        url('Hellix-SemiBoldItalic.woff') format('woff'),
+        url('Hellix-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Hellix';
+    src: url('Hellix-Regular.eot');
+    src: local('Hellix Regular'), local('Hellix-Regular'),
+        url('Hellix-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Hellix-Regular.woff2') format('woff2'),
+        url('Hellix-Regular.woff') format('woff'),
+        url('Hellix-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Hellix';
+    src: url('Hellix-BlackItalic.eot');
+    src: local('Hellix Black Italic'), local('Hellix-BlackItalic'),
+        url('Hellix-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('Hellix-BlackItalic.woff2') format('woff2'),
+        url('Hellix-BlackItalic.woff') format('woff'),
+        url('Hellix-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+:root{
+    --f_1: 20px;
+    --f_2: 25px;
+    --f_3: 30px;
+    --f_4: 50px;
+    --f_5: 100px;
+
+}
+
+
+// FONT
+*{font-family: 'Hellix';}
+h1,h2, h3{font-style: italic;text-transform: uppercase;font-size: var(--f_4);font-weight: 900;}
+
+// HOME PAGE
+header {
+    background: image-url('bg-home.jpg');
+    height: 100vh;width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center top;
+    section{height: 100%;}
+}
+.counter{
+    div{font-size: var(--f_5);}
+    span{font-style: italic;font-size: var(--f_3);font-weight: 600;text-transform:none}
+}
+.bg-blur{
+    backdrop-filter: blur(10px) brightness(1);
+    background-color: rgba(255, 255, 255, .1) ;  
+  }
+hr{
+    border-top:solid 1px white;opacity: 0.4;
+}
+
+
+// RESPONSIVE
+
+
+@media only screen and (max-width: 576px) {
+
+}
+
+@media only screen and (min-width: 577px)  and (max-width: 768px){
+
+}
+
+@media only screen and (max-width: 1100px) {
+    :root{
+        --f_1: 18px;
+        --f_2: 24px;
+        --f_3: 20px;
+        --f_4: 30px;
+        --f_5: 50px;
+    }
+}
+
+@media only screen and (max-width: 1485px) {
+
+
+}
+
+@media only screen and (max-width: 1600px) {
+
+
+}
