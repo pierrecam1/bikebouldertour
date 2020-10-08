@@ -6184,6 +6184,13 @@ raw-body@2.4.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
+react-countdown@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/react-countdown/-/react-countdown-2.2.2.tgz#c783fc3cad1699ac08e018c6da10da7cb6641f46"
+  integrity sha512-L/6mxoLBpGZY/97V883n9ZcDdkAxKjC1D9LQC73IVplwKw7U4UHkia8KvXp0vOPXnBf4gt5tgU5lGFeBcutWlQ==
+  dependencies:
+    prop-types "^15.7.2"
+
 react-dom@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
