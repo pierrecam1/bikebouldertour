@@ -1,28 +1,12 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import Countdown from 'react-countdown';
 import Button from '../UI/Button/Button';
 import Flickity from "react-flickity-component";
-import Rider from "../Riders/Rider/Rider";
-import Linked from "../UI/Linked/Linked"
-import { Link } from 'react-router-dom';
+import Linked from "../UI/Linked/Linked";
+import axios from 'axios';
+import Biker from '../Bikers/Biker/Biker'
 
-function Carousel() {
-    return (
-      <Flickity
-      options={{freeScroll: true,contain: true}}>
-        <Rider/>
-        <Rider/>
-        <Rider/>
-        <Rider/>
-        <Rider/>
-        <Rider/>
-        <Rider/>
-        <Rider/>
-      </Flickity>
-    );
-  }
-
-const renderer =({days, hours, minutes, seconds, completed}) =>{
+const renderer = ({days, hours, minutes, seconds, completed}) =>{
     if(completed){
         return(
             <h2>Today is the big day!</h2>
@@ -66,6 +50,22 @@ const renderer =({days, hours, minutes, seconds, completed}) =>{
     }
 }
 const home = () => {
+    const [bikers, setBikers] = useState([])
+    useEffect(() =>{
+        // Get all of our riders from api
+        // Update bikers in our state
+        axios.get('/api/v1/bikers.json')
+        .then( resp => {
+            setBikers(resp.data.data)
+        })
+        .catch( resp => console.log(resp) )
+    }, [bikers.length])
+
+    const list = bikers.map( item => {
+        return (<Biker
+            key={item.id}
+            attributes={item.attributes}/>)
+    })
     return(
         <Fragment>
             <header className="bg-dark">
@@ -89,7 +89,11 @@ const home = () => {
                     <h2>LIST OF RIDERS<span className="bbt">BBT</span></h2>
                 </div>
                 <div className="col-11 pr-0 ml-auto position-relative indexedup">
-                    <Carousel />
+                <Flickity
+                options={{freeScroll: true,contain: true}}>
+                    {list}
+                </Flickity>
+                
                     <Linked>All riders</Linked>
                 </div>
                 <div className="container">

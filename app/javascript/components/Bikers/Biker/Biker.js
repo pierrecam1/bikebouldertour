@@ -1,10 +1,10 @@
 import React from 'react'
 import Button from '../../UI/Button/Button';
-import classes from './Rider.module.scss';
+import classes from './Biker.module.scss';
 import dustingreen from '../../../../assets/images/Dustin-Green.png'
 
 
-const rider = () => {
+const biker = (props) => {
     return(
         <div className={classes.RiderCard + " card mr-5 pb-4 bg-blur text-center"}>
             <div className="d-flex">
@@ -12,15 +12,15 @@ const rider = () => {
                     <img src={dustingreen} />
                 </div>
                 <div className="mx-auto">
-                    <h3>ILL</h3>
-                    <p><strong>Hickory Hills</strong></p>
+                    <h3>{props.attributes.state}</h3>
+                    <p><strong>{props.attributes.city}</strong></p>
                 </div>
             </div>
            
-            <h4 className="text-left ml-3 mt-3">Dustin GREEN</h4>
+            <h4 className="text-left ml-3 mt-3">{props.attributes.first_name} {props.attributes.last_name}</h4>
             <hr />
             <Button>Find on the map</Button>
         </div>
     )
 };
-export default rider;
+export default biker;
