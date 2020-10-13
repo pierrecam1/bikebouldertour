@@ -1,6 +1,26 @@
 import React, { Fragment } from 'react'
 import Countdown from 'react-countdown';
-import Button from '../UI/Button/Button'
+import Button from '../UI/Button/Button';
+import Flickity from "react-flickity-component";
+import Rider from "../Riders/Rider/Rider";
+import Linked from "../UI/Linked/Linked"
+import { Link } from 'react-router-dom';
+
+function Carousel() {
+    return (
+      <Flickity
+      options={{freeScroll: true,contain: true}}>
+        <Rider/>
+        <Rider/>
+        <Rider/>
+        <Rider/>
+        <Rider/>
+        <Rider/>
+        <Rider/>
+        <Rider/>
+      </Flickity>
+    );
+  }
 
 const renderer =({days, hours, minutes, seconds, completed}) =>{
     if(completed){
@@ -64,12 +84,19 @@ const home = () => {
 
             </section>
             </header>
-            <section className="bg-dark text-white">
+            <section className="bg-dark text-white" id="riders-list">
                 <div className="container">
-                    <h2>LIST OF RIDERS</h2>
-                    <div className="card">
+                    <h2>LIST OF RIDERS<span className="bbt">BBT</span></h2>
                 </div>
+                <div className="col-11 pr-0 ml-auto position-relative indexedup">
+                    <Carousel />
+                    <Linked>All riders</Linked>
                 </div>
+                <div className="container">
+                    <h2>LIST OF RIDERS<span className="bbt">BBT</span></h2>
+                </div>
+                
+                
             </section>
         </Fragment>
     )

@@ -1,0 +1,18 @@
+.Btn {
+position: relative;display: inline-block;color:white;position: relative;cursor: pointer;
+&:hover{color: white;text-decoration: none;
+    &::before{transform: translateX(50px);}
+    &::after{width: calc(100% + 80px)}
+}
+&::before{width: 0;position: absolute;top:21px;left: calc(100% + 25px);transition: .2s ease-in-out;
+    content: '';display: block;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 10px;
+    border-color: transparent transparent transparent #ffffff;}
+&::after{
+    width: calc(100% + 30px);height: 2px;content: '';display: block;background-color: white;transition: .2s ease-in-out;
+    position: absolute;top:25px;left: 0;
+}
+
+}

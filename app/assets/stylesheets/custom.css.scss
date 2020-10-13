@@ -84,11 +84,14 @@ $spacers: map-merge(
 // FONT
 *{font-family: 'Hellix';}
 h1,h2, h3{font-style: italic;text-transform: uppercase;font-size: var(--f_4);font-weight: 900;}
+h2{
+    position: relative;z-index: 1;
+} .bbt{position: absolute;top:0%; left: -20%;font-size: 650px;line-height: 0.3;z-index:-1;color: #1C2025;}
 
 // HOME PAGE
 header {
     background: image-url('bg-home.jpg');
-    height: 100vh;width: 100%;
+    height: 95vh;width: 100%;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center top;
@@ -105,7 +108,12 @@ header {
 hr{
     border-top:solid 1px white;opacity: 0.4;
 }
-
+// LIST OF RIDERS
+#riders-list .indexedup{z-index: 3;}
+// CAROUSEL
+.flickity-slider .card {
+    width: 320px;
+  }
 
 // RESPONSIVE
 
