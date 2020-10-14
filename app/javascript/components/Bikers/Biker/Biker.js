@@ -1,7 +1,6 @@
 import React from 'react'
 import Button from '../../UI/Button/Button';
 import classes from './Biker.module.scss';
-import dustingreen from '../../../../assets/images/Dustin-Green.png'
 
 
 const biker = (props) => {
@@ -9,7 +8,7 @@ const biker = (props) => {
         <div className={classes.RiderCard + " card mr-5 pb-4 bg-blur text-center"}>
             <div className="d-flex">
                 <div className={classes.ContainPicture}>
-                    <img src={dustingreen} />
+                    <img src={props.attributes.avatar} />
                 </div>
                 <div className="mx-auto">
                     <h3>{props.attributes.state}</h3>
