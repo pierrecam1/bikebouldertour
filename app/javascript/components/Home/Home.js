@@ -4,7 +4,8 @@ import Button from '../UI/Button/Button';
 import Flickity from "react-flickity-component";
 import Linked from "../UI/Linked/Linked";
 import axios from 'axios';
-import Biker from '../Bikers/Biker/Biker'
+import Biker from '../Bikers/Biker/Biker';
+import Localize from '../Localize/Localize';
 
 const renderer = ({days, hours, minutes, seconds, completed}) =>{
     if(completed){
@@ -96,12 +97,8 @@ const home = () => {
                 
                     <Linked>All riders</Linked>
                 </div>
-                <div className="container">
-                    <h2>LIST OF RIDERS<span className="bbt">BBT</span></h2>
-                </div>
-                
-                
             </section>
+            <Localize/>
         </Fragment>
     )
 };

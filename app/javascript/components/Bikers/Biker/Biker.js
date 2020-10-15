@@ -5,10 +5,11 @@ import classes from './Biker.module.scss';
 
 const biker = (props) => {
     return(
-        <div className={classes.RiderCard + " card mr-5 pb-4 bg-blur text-center"}>
+        <div
+        className={classes.RiderCard + " card mr-5 pb-4 bg-blur text-center"}>
             <div className="d-flex">
                 <div className={classes.ContainPicture}>
-                    <img src={props.attributes.avatar} />
+                    <img src={props.attributes.avatar} alt={props.attributes.first_name} />
                 </div>
                 <div className="mx-auto">
                     <h3>{props.attributes.state}</h3>
