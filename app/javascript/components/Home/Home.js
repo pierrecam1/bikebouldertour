@@ -76,7 +76,7 @@ const home = () => {
                     <hr/>
                     <Countdown date={new Date("Apr 1, 2021 00:00:00")} renderer={renderer} />
                     <hr/>
-                    <h3>Comming Soon</h3>
+                    <h3>Coming Soon</h3>
                     <p className="w-75 mx-auto">If you have a slogan, you could be sponsoring this great event. 
                         The only thing you have to do, is to submit the form
                     </p>
