@@ -4,7 +4,7 @@ import Home from './Home/Home';
 import Bikers from './Bikers/Bikers'
 import Localize from './Localize/Localize';
 import Photos from './Photos/Photos';
-import Sponsoring from './Sponsoring/Sponsoring';
+import SponsoringForm from './Sponsoring/SponsoringForm';
 
 
 
@@ -15,7 +15,7 @@ const App = () => {
             <Route exact path="/localize" component={Localize} />
             <Route exact path="/bikers" component={Bikers} />
             <Route exact path="/photos" component={Photos} />
-            <Route exact path="/sponsoring" component={Sponsoring} />
+            <Route exact path="/sponsoring" component={SponsoringForm} />
         </Switch>
     )
 };
