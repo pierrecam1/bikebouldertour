@@ -13,7 +13,9 @@ module Api
             end
             
             def create
+                 
                 sponsor = Sponsor.new(sponsor_params)
+                
         
                 if sponsor.save
                   render json: SponsorSerializer.new(sponsor).serializable_hash.to_json
@@ -26,7 +28,7 @@ module Api
 
             private
             def sponsor_params
-                params.require(:sponsor).permit(:name, :sentence, :logo)
+                params.require(:sponsor).permit(:name, :sentence, :logo, :featured_image_url)
                 
             end
             
