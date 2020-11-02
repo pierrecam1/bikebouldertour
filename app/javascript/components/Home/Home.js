@@ -54,7 +54,6 @@ const renderer = ({days, hours, minutes, seconds, completed}) =>{
 }
 const home = () => {
     const [bikers, setBikers] = useState([])
-    const [sponsors, setSponsors] = useState([])
     useEffect(() =>{
         // Get all of our riders from api
         // Update bikers in our state
@@ -65,32 +64,10 @@ const home = () => {
         .catch( resp => console.log(resp) )
     }, [bikers.length])
 
-    useEffect(() =>{
-        // Get all of our riders from api
-        // Update bikers in our state
-        axios.get('/api/v1/sponsors.json')
-        .then( resp => {
-            setSponsors(resp.data.data)
-        })
-        .catch( resp => console.log(resp) )
-    }, [sponsors.length])
-
     const list = bikers.map( item => {
         return (<Biker
             key={item.id}
             attributes={item.attributes}/>)
-    })
-
-    const allsponsors = sponsors.map(list =>{
-        return(
-            <div key={list.id}>
-                <p>{list.id}</p>
-                <p>{list.attributes.name}</p>
-                <p>{list.attributes.sentence}</p>
-                <p>{list.attributes.logo}</p>
-                <img src={list.attributes.logo} alt=""/>
-                </div>
-        )
     })
 
     return(
@@ -126,9 +103,6 @@ const home = () => {
                 </div>
             </section>
             <Localize/>
-            <section>
-                {allsponsors}
-            </section>
         </Fragment>
     )
 };

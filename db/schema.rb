@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_10_30_085734) do
+=======
+ActiveRecord::Schema.define(version: 2020_10_29_085428) do
+>>>>>>> parent of 02f0e4f... Add amazon setup
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false

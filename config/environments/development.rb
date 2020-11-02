@@ -29,10 +29,14 @@ Rails.application.configure do
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
+<<<<<<< HEAD
    config.active_storage.service = :local
 
   # Store uploaded files on the S3 AMAZON system (see config/storage.yml for options).
   #config.active_storage.service = :amazon
+=======
+  config.active_storage.service = :local
+>>>>>>> parent of 02f0e4f... Add amazon setup
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false

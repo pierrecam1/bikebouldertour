@@ -5,41 +5,50 @@ import Dropzone from 'react-dropzone'
 
 
 
-const sponsoringFrom = () => {
+const sponsoringFrom = (props) => {
 
     const [sponsors, setSponsors] = useState({ name: '', sentence: '', logo: '' });
     const [send, setSend] =  useState(false);
     const [errors, setErrors] = useState(false);
+    console.log('sponsors.name', sponsors.name);
 
+<<<<<<< HEAD
 
 
     const isValid = (obj) =>{
         if ((obj) != undefined){
+=======
+ const isValid = (obj) =>{
+    if ((obj) != undefined){
+>>>>>>> parent of 02f0e4f... Add amazon setup
 
-            if (((obj.length) == 0) && (errors == true) ){
-                console.log('1')
-                return <p>Require field</p>
-            }
-        }
-        if ((errors == true) && ((obj) == undefined)){
-            console.log('2')
-                return <p>Require field</p>
+        if (((obj.length) == 0) && (errors == true) ){
+            console.log('1')
+            return <p>Require field</p>
         }
     }
-    // Get   sponsors message
-    useEffect(() =>{
-        // Get all of our riders from api
-        // Update bikers in our state
-        axios.get('/api/v1/sponsors.json')
-        .then( resp => {
+    if ((errors == true) && ((obj) == undefined)){
+        console.log('2')
+            return <p>Require field</p>
+    }
+ }
+    
+
+
+    useEffect(()=> {
+    
+        axios.get(`/api/v1/sponsors/`)
+        .then( (resp) => {
             setSponsors(resp.data)
         })
-        .catch( resp => console.log(resp) )
-    }, [])
+        .catch( data => {
+            console.log('Error', data)
+        })
+      }, [])
 
-    // Handle change
     const handleChange = (e) =>{
         e.preventDefault()
+<<<<<<< HEAD
         if(e.target.name == 'logo'){
             console.log(e.target.files)
             setSponsors({...sponsors, [e.target.name]: e.target.files[0]});
@@ -55,7 +64,13 @@ const sponsoringFrom = () => {
         
       }
 
+=======
+        setSponsors({...sponsors, [e.target.name]: e.target.value})
+
+    }
+>>>>>>> parent of 02f0e4f... Add amazon setup
     // Create a sponsors message
+    console.log('Value sent before : ', send);
     const handleSubmit = (e) => {
 
         // Prevent submit
@@ -64,7 +79,7 @@ const sponsoringFrom = () => {
          // Add Token
         AxiosHelper()
 
-        const sponsors_msg = sponsors.data.attributes
+        const sponsors_msg = parseInt(sponsors.data.attributes)
         axios.post('/api/v1/sponsors', { ...sponsors, sponsors_msg })
         .then( (resp) => {
             setSponsors({ name: '', sentence: '', logo: '' })
@@ -81,7 +96,7 @@ const sponsoringFrom = () => {
     return(
         <Fragment>
                     <h1>This is the Sponsoring view for Boulder Bike Tour</h1>
-        <form onSubmit={handleSubmit} encType="multipart/form-data">
+        <form onSubmit={handleSubmit}>
             <div>
                 <input
                 onChange={handleChange}
@@ -101,6 +116,7 @@ const sponsoringFrom = () => {
                 {isValid(sponsors.sentence)}
             </div>
             <div>
+<<<<<<< HEAD
             <Dropzone onDrop={onDrop}>
                 {({getRootProps, getInputProps}) => (
                     <div {...getRootProps()}>
@@ -109,6 +125,14 @@ const sponsoringFrom = () => {
                     </div>
                 )}
             </Dropzone>
+=======
+                <label htmlFor="logo">Import your logo</label>
+                <input
+                onChange={handleChange}
+                type="file"
+                name="logo"
+                value={sponsors.logo || ''}/>
+>>>>>>> parent of 02f0e4f... Add amazon setup
             </div>
             <button type="submit">Submit your sponsoring</button>
         </form>
