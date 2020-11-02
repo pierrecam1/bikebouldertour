@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import axios from 'axios';
 import React, { Fragment, useEffect, useState } from 'react';
 import AxiosHelper from '../../util/AxiosHelper'
@@ -141,6 +142,13 @@ const sponsoringFrom = (props) => {
         
         </Fragment>
 
+=======
+import React from 'react'
+
+const sponsoring = () => {
+    return(
+        <h1>This is the Sponsoring view for Boulder Bike Tour</h1>
+>>>>>>> parent of bc5dbcc... Add active storage
 =======
 import React from 'react'
 

@@ -12,6 +12,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_10_30_085734) do
 =======
 ActiveRecord::Schema.define(version: 2020_10_29_085428) do
@@ -37,6 +38,9 @@ ActiveRecord::Schema.define(version: 2020_10_29_085428) do
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
+=======
+ActiveRecord::Schema.define(version: 2020_10_13_081857) do
+>>>>>>> parent of bc5dbcc... Add active storage
 =======
 ActiveRecord::Schema.define(version: 2020_10_13_081857) do
 >>>>>>> parent of bc5dbcc... Add active storage
