@@ -1,5 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
-import { BrowserRouter, Link } from 'react-router-dom';
+import React, { Fragment, useState, useEffect } from 'react'
 import Countdown from 'react-countdown';
 import Button from '../UI/Button/Button';
 import Flickity from "react-flickity-component";
@@ -7,7 +6,6 @@ import Linked from "../UI/Linked/Linked";
 import axios from 'axios';
 import Biker from '../Bikers/Biker/Biker';
 import Localize from '../Localize/Localize';
-import SponsoringFrom from '../Sponsoring/SponsoringForm'
 
 const renderer = ({days, hours, minutes, seconds, completed}) =>{
     if(completed){
@@ -69,7 +67,6 @@ const home = () => {
             key={item.id}
             attributes={item.attributes}/>)
     })
-
     return(
         <Fragment>
             <header className="bg-dark">
@@ -99,7 +96,6 @@ const home = () => {
                 </Flickity>
                 
                     <Linked>All riders</Linked>
-                    <Link to={`/bikers`}>New a</Link>
                 </div>
             </section>
             <Localize/>

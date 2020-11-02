@@ -3,6 +3,7 @@ module Api
         class BikersController < ApplicationController
             def index
                 bikers = Biker.all
+
                 render json: BikerSerializer.new(bikers).serializable_hash.to_json
             end
             def show
