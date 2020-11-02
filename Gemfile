@@ -25,16 +25,6 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootstrap', '~> 4.5.2'
 gem 'jquery-rails'
 gem 'jsonapi-serializer'
-<<<<<<< HEAD
-# gem "aws-sdk-s3", require: false
-
-# USE CLOUDINARY
-gem 'cloudinary'
-# Provides support for Cross-Origin Resource Sharing (CORS)
-gem 'rack-cors'
-
-=======
->>>>>>> parent of 02f0e4f... Add amazon setup
 
 
 
